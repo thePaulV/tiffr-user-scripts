@@ -1,5 +1,5 @@
 # tiffr-user-scripts
-A collection of Greasemonkey / Tampermonkey user scripts to improve the Toronto International Film Festival (TIFF) film selection and scheduling process when using [tiffr](https://tiffr.com/).
+A collection of Greasemonkey / Tampermonkey user scripts to improve the Toronto International Film Festival (TIFF) film selection and scheduling process when using [tiffr](https://tiffr.com/), a great site by @[fightingtheboss](https://github.com/fightingtheboss) and @[mayanring](https://github.com/mayanring).
 
 # Features
 These user scripts add a few convenience features to tiffr, including:
