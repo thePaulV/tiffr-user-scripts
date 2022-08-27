@@ -13,6 +13,7 @@ These user scripts add a few convenience features to tiffr, including:
   * g: google the film
 * Adding a button to hide descriptions on the schedule page to get a more compact schedule (e.g. for printing)
 * Numbering screenings of each film in the planner / schedule builder so you can identify premieres and earlier screenings
+* Indicating right in the planner when you've already scheduled a film so you don't book it twice
 
 # Installation
 These scripts require the Greasemonkey or Tampermonkey browser addons (tested on GreaseMonkey in Firefox). Once you've installed it, you can install the scripts here:
