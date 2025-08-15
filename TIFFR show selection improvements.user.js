@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     TIFFR show selection improvements
-// @description Improves the film list. Scrolls the list to the current film and adds keyboard shortcuts to the films list. left = previous film, right = next film, enter = toggle favourite, ctr/cmd+enter = watch trailer, shift-enter = go to official tiff page.
-// @version  1
+// @description Improves the film list. Scrolls the list to the current film and adds keyboard shortcuts to the films list. left = previous film, right = next film, enter;s = toggle favourite, ctr/cmd+enter;t = watch trailer, shift-enter;l = go to official tiff page.
+// @version  2
 // @grant    none
 // @include  https://*.tiffr.com/shows/*
 // @require  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
@@ -28,20 +28,20 @@ $(function() {
   });
   
   // Watch the trailer
-  Mousetrap.bind(["mod+enter", "mod+return"], function() {
+  Mousetrap.bind(["mod+enter", "mod+return", "t"], function() {
     console.log("TIFFR+: watch trailer");
     go("div.film-image-container > a"); // used to watch the trailer       
   });
 
   // Follow the link to the tiff site
-  Mousetrap.bind(["shift+enter", "shift+return"], function() {
+  Mousetrap.bind(["shift+enter", "shift+return", "l"], function() {
       console.log("TIFFR+: follow link to tiff site");
       go("div.film-metadata dl.film-metadata__datum:last a")
   });
 
   
   // Favourite a film by pressing enter
-  Mousetrap.bind(["enter", "return"], function() {
+  Mousetrap.bind(["enter", "return", "s"], function() {
     console.log("TIFFR+: Favouriting film");
     let el = $(".hvr-pulse");
     el.click();

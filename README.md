@@ -7,9 +7,9 @@ These user scripts add a few convenience features to tiffr, including:
 * Adding counts to shortlist and scheduled pages so you know how many films you're dealing with
 * Adding keyboard shortcuts to the film pages
   * Left / right: go to previous / next film
-  * Enter: favourite / unfavourite
-  * Cmd/ctrl-enter: view trailer (if there is one)
-  * Shift-enter: go to official tiff page for the film
+  * Enter or "s": favourite / unfavourite
+  * Cmd/ctrl-enter or "t": view trailer (if there is one)
+  * Shift-enter or "l" (for link): go to official tiff page for the film
   * g: google the film
 * Adding a button to hide descriptions on the schedule page to get a more compact schedule (e.g. for printing)
 * Numbering screenings of each film in the planner / schedule builder so you can identify premieres and earlier screenings
