@@ -55,6 +55,15 @@ $(function() {
     let target = `${google}${title} tiff`;
     location.assign(target)
   });
+  
+  // Google reviews of film pressing R
+  Mousetrap.bind("r", function() {
+    console.log("TIFFR+: Googling reviews");
+    let title = $("article h1").text()
+    let google = "https://www.google.com/search?q="
+    let target = `${google}${title} 2026 review`;
+    location.assign(target)
+  });
 
   
   function isBrokenLink(url) {
