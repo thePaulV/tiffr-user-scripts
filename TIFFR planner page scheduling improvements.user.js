@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name     2025 TIFFR planner page scheduling improvements
+// @name     TIFFR planner page scheduling improvements
 // @description Add some helpful features to the planner for tiffr, including 1. a count of films in your shortlist, 2. a count of films in your schedule, 3. numbering screenings of films so you can find premieres easily
-// @version  2
+// @version  2026
 // @grant    none
 // @include  https://*.tiffr.com/planner
 // @require  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
@@ -11,12 +11,13 @@
 
 "use strict";
 
-console.log("TIFFR Planner 2025 loading");
+const ver = GM.info.script.version;
+console.log("TIFFR Planner loading. Version ", ver);
 
 
 $(function() {
   function log (msg) {
-    console.log(`TIFFR Planner 2025: ${msg}`); 
+    console.log(`TIFFR Planner ${ver}: ${msg}`); 
   }
   
   function addCss(rule) {
@@ -125,4 +126,4 @@ $(function() {
 });
 
 
-console.log("TIFFR Planner 2025 loaded");
+console.log("TIFFR Planner ", ver, " loaded");
