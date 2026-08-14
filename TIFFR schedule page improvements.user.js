@@ -1,32 +1,41 @@
 // ==UserScript==
 // @name     TIFFR schedule page improvements
-// @description Improves the schedule page by: 1. Adding a button to hide descriptions on the schedule page, 2. Adding a count to the bottom right
-// @version  1
+// @description Improves the schedule page by: 1. Adding a button to hide descriptions on the schedule page, 2. Adding a count to the bottom right, and new in 2026 adding a way to show all days at once.
+// @version  2026
 // @grant    none
-// @include  https://*.tiffr.com/schedules/*
+// @include  https://*.tiffr.com/u/*/schedule*
 // @require  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @require  https://craig.global.ssl.fastly.net/js/mousetrap/mousetrap.min.js?a4098
 // ==/UserScript==
 
 "use strict";
 
-console.log("TIFFR schedules loading");
+const ver = GM.info.script.version;
+
+console.log("TIFFR schedules loading. Version ", ver);
 
 
 $(function() {
-  $('.schedule__owner').append('<button class="tweak-clean">Hide decriptions</button>');
+  // insert button to show all days (new 2026)
+  $('share-actions').after('<a class="underline text-base tweak-show-all" data-turbo="false" href="#">Show all days</a><span> | </span>');
+  $('.tweak-show-all').click(function() {
+    console.log("clicked. showing all dates");
+    $('[data-schedule-tabs-target=panel]').removeClass('hidden');
+  });
+
+	// insert button to hide descriptions
+  $('share-actions~a~span:first').after('<a href="#" data-turbo="false" class="tweak-clean text-base underline">Hide decriptions</a><span> | </span>');
   $('.tweak-clean').click(function() {
     console.log("clicked. hiding");
-//    $('.schedule-event-summary').add('.schedule-event-meta__location').hide();
-    $('.schedule-event-summary').hide();
+    $('article div>h2~p').hide();
   });
 
   // insert a count of showings at bottom right
-  console.log("TIFFR final improvements: Inserting count");
-  let count = $('.schedule__event-details').length;
-  let counter = (`<div id="attendance-counter-container" data-turbolinks="false"><div class="attendance-counter">${count}</div></div>`);
-  let target = $('.schedule');
-  target.append(counter);
+  const shows = $('.md\\:contents')
+  const showCount = shows.length;
+  console.log(`Seeing ${showCount}`);
+  $('share-actions').before(`<span>Total films: ${showCount}</span>`);
+  
 });
 
-console.log("TIFFR final loaded");
+console.log("TIFFR final loaded. Version ", ver);
