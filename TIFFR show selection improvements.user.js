@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name     TIFFR show selection improvements
+// @name     TIFFR film page improvements
 // @description Improves the film list. Scrolls the list to the current film and adds keyboard shortcuts to the films list. left = previous film, right = next film, enter;s = toggle favourite, ctr/cmd+enter;t = watch trailer, shift-enter;l = go to official tiff page.
-// @version  3
+// @version  2026
 // @grant    none
 // @include  https://*.tiffr.com/films/*
 // @require  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
