@@ -36,6 +36,10 @@ $(function() {
   console.log(`Seeing ${showCount}`);
   $('share-actions').before(`<span>Total films: ${showCount}</span>`);
   
+  // insert a button to download the schedule
+  $('share-actions~a~span:first').after('<a href="https://2026.tiffr.com/api/2026/schedule.json" download="tiffr-schedule.json" data-turbo="false" class="tweak-clean text-base underline">Download schedule.json</a><span> | </span>');
+  
+  
 });
 
 console.log("TIFFR final loaded. Version ", ver);
