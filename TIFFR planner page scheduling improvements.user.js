@@ -110,6 +110,11 @@ $(function() {
 
 // 		log(`Attending: ${titlesNoDupes.join(",")}`);
   }
+  
+  
+  function addExport() {
+    $('aside button:contains("Schedulizer")').after('<a href="https://2026.tiffr.com/api/2026/schedule.json" download="tiffr-schedule.json"><button id="exportButton" type="button" class="flex w-full items-center justify-between px-3 py-2.5 text-left font-semibold"><span>Export</span><span aria-hidden="true" class="text-lg leading-none text-neutral-500">+</span></button></a>');
+  }
 
   // This class is used to indicate filmes that are selected, and cross them out
   addCss(`.tweak-film-selected {     text-decoration: line-through;  }`);
@@ -120,6 +125,8 @@ $(function() {
 		setTimeout (numberScreeningsPerFilm, timeout);
     setTimeout (strikeOutSelected, timeout);
   }
+  
+  setTimeout (addExport, 500);
   
   trigger();
   $(document).click(trigger);
