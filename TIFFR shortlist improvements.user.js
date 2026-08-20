@@ -3,7 +3,7 @@
 // @description Adds a count of films in your shortlist to the shortlist page
 // @version  1
 // @grant    none
-// @include  https://*.tiffr.com/shortlists/*
+// @include  https://*.tiffr.com/u/*/shortlist
 // @require  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // ==/UserScript==
 
@@ -13,13 +13,8 @@ console.log("TIFFR shortlist: loading");
 
 
 $(function() {
-  // insert a count of showings at bottom right
-  console.log("TIFFR shortlist: Inserting count");
-  let count = $('.shortlist-list li').length;
-  console.log("TIFFR shortlist: Count is " + count);
-  let counter = (`<div id="attendance-counter-container" data-turbolinks="false"><div class="attendance-counter">${count}</div></div>`);
-  let target = $('.shortlist');
-  target.append(counter);
+  // add download link
+  $('div.close-all-button').after('<div class="text-base"><a class="underline" download="tiffr-shortlist.json" href="https://2026.tiffr.com/api/2026/shortlist.json">Download shortlist.json</a>')
 });
 
 console.log("TIFFR shortlist: loaded");
