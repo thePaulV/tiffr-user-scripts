@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name     TIFFR schedule page improvements
 // @description Improves the schedule page by: 1. Adding a button to hide descriptions on the schedule page, 2. Adding a count to the bottom right, and new in 2026 adding a way to show all days at once.
-// @version  2026
+// @version  2026.1
 // @grant    none
 // @include  https://*.tiffr.com/u/*/schedule*
 // @require  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
@@ -16,12 +16,6 @@ console.log("TIFFR schedules loading. Version ", ver);
 
 
 $(function() {
-  // insert button to show all days (new 2026)
-  $('share-actions').after('<a class="underline text-base tweak-show-all" data-turbo="false" href="#">Show all days</a><span> | </span>');
-  $('.tweak-show-all').click(function() {
-    console.log("clicked. showing all dates");
-    $('[data-schedule-tabs-target=panel]').removeClass('hidden');
-  });
 
 	// insert button to hide descriptions
   $('share-actions~a~span:first').after('<a href="#" data-turbo="false" class="tweak-clean text-base underline">Hide decriptions</a><span> | </span>');
